@@ -1,0 +1,19 @@
+<?php
+function func($arr){
+  $count=count($arr);
+  if(array_sum($arr)==0)
+    return $arr;
+  else {
+    for($i=0;$i<$count;$i++){
+	if($arr[$i]==0){
+           for($j=$count;$j>$i;$j--){
+      	   $arr[$j]=$arr[$j-1];
+           }
+        $arr[$i]=0;
+        $i++;
+        array_splice($arr,-1,1);
+	}
+    }
+  print_r($arr);
+  }
+}
